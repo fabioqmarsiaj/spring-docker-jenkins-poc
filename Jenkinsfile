@@ -1,10 +1,12 @@
 pipeline {
     agent any
 
-    stages {
-        stage('Clean & Build'){
-            steps{
-                sh './gradlew clean build'
+    node('agent1'){
+        stages {
+            stage('Clean & Build'){
+                steps{
+                    sh './gradlew clean build'
+                }
             }
         }
     }
