@@ -9,7 +9,8 @@ pipeline {
 
         stage('Docker Build & Up'){
             steps{
-                sh 'docker compose build'
+                sh 'docker compose up --force-recreate -d --build'
+                sh 'docker image prune -f'
             }
         }
     }
