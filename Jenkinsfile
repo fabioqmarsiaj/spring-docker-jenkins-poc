@@ -6,5 +6,11 @@ pipeline {
                 sh './gradlew clean build'
             }
         }
+
+        stage('Docker Build & Up'){
+            steps{
+                sh 'docker compose build'
+            }
+        }
     }
 }
