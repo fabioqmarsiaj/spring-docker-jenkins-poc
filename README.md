@@ -39,9 +39,9 @@ When jenkins run the command:
 
 `docker compose --env-file $RESOURCE_POC_ENV_FILE up --force-recreate -d --build`
 
-it will try to search the secret file inside the current workspace, which is the root folder from the project:
+it will try to search the secret file inside the current workspace, which is the job name on jenkins:
 
-`~/spring-docker-jenkins-poc/`
+`~/var/lib/jenkins/workspace/resource-poc`
 
 Before running the command, we must :
   * Give Jenkins user write access to the project folder (this step could be done inside the Jenkins UI)
@@ -53,6 +53,16 @@ Note that jenkins create those files and does not expose them on the pipeline. W
 **$RESOURCE_POC_ENV_FILE** is the **PATH** to the secret file.
 
 ![alt text](src/main/resources/images/jenkins.png)
+
+### Docker Hub Login
+
+Best practice to use _--password-stdin_ when login via ssh.
+
+`sh 'echo "$DOCKERHUB_PASSWORD" | docker login --username $DOCKERHUB_USER --password-stdin'`
+
+This commands gets the **_$DOCKERHUB_PASSWORD_** variable defined on the binding and pass to the docker login command.
+
+![alt text](src/main/resources/images/dockerhub.png)
 
 
 
