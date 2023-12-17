@@ -10,7 +10,7 @@ pipeline {
         stage('Copy secret file to workspace'){
             steps{
                 sh 'chmod -R 777 .'
-                sh 'cp \$RESOURCE_POC_ENV_FILE /var/lib/jenkins/workspace/resource-poc/.env'
+                sh 'cp \$RESOURCE_POC_ENV_FILE /var/lib/jenkins/workspace/resource-poc/'
             }
         }
 
