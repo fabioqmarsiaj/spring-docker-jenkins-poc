@@ -8,9 +8,12 @@ pipeline {
         }
 
         stage('Docker Build & Up'){
-            steps{
-                sh 'docker compose up --force-recreate -d --build'
-                sh 'docker image prune -f'
+
+            withCredentials(bindings: [file(credentialsId: 'resource-poc-env-file', variable: 'resource-poc-env-file')]){
+                steps{
+                    sh 'docker compose --env-file $resource-poc-env-file up --force-recreate -d --build'
+                    sh 'docker image prune -f'
+                }
             }
         }
     }
