@@ -1,2 +1,2 @@
 server:
-  port: 8081
+  port: ${RESOURCE_POC_SERVER_PORT}
