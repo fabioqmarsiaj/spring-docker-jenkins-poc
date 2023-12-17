@@ -4,8 +4,11 @@ services:
     container_name: resource-poc
     build:
       dockerfile: ./Dockerfile
+    # The ${RESOURCE_POC_SERVER_PORT} must be set on host.
     ports:
       - "${RESOURCE_POC_SERVER_PORT}:${RESOURCE_POC_SERVER_PORT}"
+    # The env_file option will only set environment variables in the docker container itself.
+    # Not on the host which is used during the compose 'build'.
     env_file:
       - .env
     restart: always
