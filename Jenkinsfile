@@ -32,7 +32,7 @@ pipeline {
 
         stage('Push to Docker Hub'){
             steps{
-                sh 'docker push fabioqmarsiaj/spring-docker-jenkins-poc'
+                sh 'docker push fabioqmarsiaj/spring-docker-jenkins-poc-app'
             }
         }
     }
