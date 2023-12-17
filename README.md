@@ -49,7 +49,7 @@ Before running the command, we must :
   * and then copy to .env file to the workspace, so docker compose could access it.
     * `cp $RESOURCE_POC_ENV_FILE .env`
 
-Note that jenkins create those files and does not expose them on the pipeline. We only need to now that the varible
+Note that jenkins create those files and does not expose them on the pipeline. We only need to know the varible
 **$RESOURCE_POC_ENV_FILE** is the **PATH** to the secret file.
 
 ![alt text](src/main/resources/images/jenkins.png)
