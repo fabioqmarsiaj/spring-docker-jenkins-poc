@@ -9,7 +9,7 @@ pipeline {
 
         stage('Docker Build'){
             steps{
-                sh 'docker compose build -t fabioqmarsiaj/spring-docker-jenkins-poc .'
+                sh 'docker compose build'
             }
         }
 

@@ -1,7 +1,7 @@
 version: '3.5'
 services:
-  resource:
-    container_name: resource-poc
+  app:
+    container_name: resource_poc
     build:
       dockerfile: ./Dockerfile
     # The ${RESOURCE_POC_SERVER_PORT} must be set on host.
