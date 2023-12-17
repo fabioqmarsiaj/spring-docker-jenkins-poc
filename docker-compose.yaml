@@ -2,6 +2,7 @@ version: '3.5'
 services:
   app:
     container_name: resource_poc
+    image: fabioqmarsiaj/spring-docker-jenkins-poc-app
     build:
       dockerfile: ./Dockerfile
     # The ${RESOURCE_POC_SERVER_PORT} must be set on host.
