@@ -5,6 +5,7 @@ services:
     build:
       dockerfile: ./Dockerfile
     ports:
-      - "8081:8081"
+      - "${RESOURCE_POC_SERVER_PORT}:${RESOURCE_POC_SERVER_PORT}"
     env_file:
       - .env
+    restart: always
